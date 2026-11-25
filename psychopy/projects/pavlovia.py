@@ -198,8 +198,8 @@ class User(dict):
         if isinstance(id, (float, int, str)):
             # If given a number or string, treat it as a user ID / username
             self.info = self.session.session.get(
-                "https://pavlovia.org/api/v2/designers/" + str(id)
-            ).json()['designer']
+                "https://gitlab.pavlovia.org/api/v4/user" + str(id)
+            ).json()
             # if self.info doesn't have the necessary keys, try to recreate it with the information 
             # from GitLab
             if 'gitlabId' not in self.info:
